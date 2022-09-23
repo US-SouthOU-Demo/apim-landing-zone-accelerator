@@ -67,6 +67,7 @@ jobs:
       - name: deploy
         uses: azure/arm-deploy@v1
         with:
+          failOnStdErr: false
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           scope: subscription
           region: ${{ fromJson(env.config).AZURE_LOCATION }}
